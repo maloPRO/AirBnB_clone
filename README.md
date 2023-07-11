@@ -1,7 +1,7 @@
 ## AirBnB Clone
 
 ### Description
-This is a full web application of the AirBnb Clone
+This is a full web application of the AirBnb Clone. It consists of the console, web static, mySQL storage, web framework(templating), RESTful API, Web dynamic. 
 
 ### The console
 - data model
