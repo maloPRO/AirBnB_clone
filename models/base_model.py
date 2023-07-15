@@ -31,7 +31,6 @@ class BaseModel:
         """
 
         self.updated_at = datetime.datetime.now()
-        self.created_at
 
     def to_dict(self):
         """
