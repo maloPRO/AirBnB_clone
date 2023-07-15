@@ -3,8 +3,9 @@
 """ Filestorage module """
 import os
 
+
 class FileStorage:
-    """ serializes instances to a JSON file and deserializes JSON file to instances: """
+    """ serializes instances to a JSON file and deserializes JSON file """
 
     __file_path = "path/to/*.json"
     __objects = {}
@@ -18,4 +19,3 @@ class FileStorage:
 
     def new(self, obj):
         """ sets in __objects the obj with key <obj class name>.id """
-
