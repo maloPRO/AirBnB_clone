@@ -15,6 +15,7 @@ class BaseModel:
                 self.key = value
         self.id = str(uuid.uuid4())
         self.created_at = datetime.datetime.now()
+        self.updated_at = sel.created_at
 
     def __str__(self):
         """ Returns a string representation """
@@ -40,8 +41,7 @@ class BaseModel:
 
         my_dict = self.__dict__
         my_dict["__class__"] = self.__class__.__name__
-
-        self.created_at = datetime.datetime.now().isoformat()
-        self.updated_at = datetime.datetime.now().isoformat()
+        my_dict["created_at"] = datetime.datetime.now().isoformat()
+        my_dict["updated_at"] = datetime.datetime.now().isoformat()
 
         return my_dict
