@@ -1,27 +1,34 @@
 #!/usr/bin/python3
 
 """ This module contains the BaseModel class """
-import uuid
-import datetime
-from models.__init__ import storage
+from uuid import uuid4
+from datetime import datetime
+import models
 
 
 class BaseModel:
     """ Base model class """
 
     def __init__(self, *args, **kwargs):
-        """ Initializes class """
+        """
+        Initializes class
+
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
+        """
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
+
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ['created_at', 'updated_at']:
-                        value = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                        value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                     setattr(self, key, value)
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = self.created_at
-            BaseModel.storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """ Returns a string representation """
@@ -37,8 +44,8 @@ class BaseModel:
         updated_at with the current datetime
         """
 
-        self.updated_at = datetime.datetime.now()
-        BaseModel.storage.save(self)
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -48,7 +55,7 @@ class BaseModel:
 
         my_dict = self.__dict__
         my_dict["__class__"] = self.__class__.__name__
-        my_dict["created_at"] = datetime.datetime.now().isoformat()
-        my_dict["updated_at"] = datetime.datetime.now().isoformat()
+        my_dict["created_at"] = datetime.now().isoformat()
+        my_dict["updated_at"] = datetime.now().isoformat()
 
         return my_dict

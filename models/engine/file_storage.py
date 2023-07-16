@@ -7,11 +7,8 @@ import json
 class FileStorage:
     """ serializes instances to a JSON file and deserializes JSON file """
 
-    __file_path = "models/engine/file.json"
+    __file_path = "file.json"
     __objects = {}
-
-    def __init__(self):
-        """ initiallises class """
 
     def all(self):
         """ returns dictionary """
@@ -19,16 +16,28 @@ class FileStorage:
 
     def new(self, obj):
         """ sets in __objects the obj with key <obj class name>.id """
-        self.__objects[obj.id] = ""
+        key = f"{obj.__class__.__name__}.{obj.id}"
+        self.__objects[key] = obj
 
     def save(self):
         """serializes __objects to the JSON file"""
-        with open(self.__file_path, "w") as jsonfile:
-            json.dump(self.__objects, jsonfile)
+        data = {}
+        for key, value in self.__objects.items():
+            data[key] = value.to_dict()
+        with open(self.__file_path, "w") as file:
+            json.dump(data, file)
 
     def reload(self):
         """deserializes the JSON file to __objects"""
-        if self.__file_path is not None:
-            with open(self.__file_path, "r") as jsonfile:
-                self.__objects = json.load(jsonfile)
-
+        try:
+            with open(self.__file_path, "r") as file:
+                data = json.load(file)
+                from models.base_model import BaseModel
+                for key, value in data.items():
+                    class_name, obj_id = key.split(".")
+                    class_ = BaseModel if class_name == "BaseModel" else None
+                    if class_:
+                        obj = class_(**value)
+                        self.new(obj)
+        except FileNotFoundError:
+            pass
