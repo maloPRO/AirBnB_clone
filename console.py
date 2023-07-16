@@ -3,6 +3,7 @@
 """ Command line interpreter """
 
 import cmd
+import models
 from  models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
@@ -50,15 +51,50 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** instance id missing **")
         elif len(args) == 2:
-            instance = BaseModel()
             class_name = args[0]
             instance_id = args[1]
 
-            if instance.id != instance_id:
-                print("** no instance found **")
-            else:
-                print(instance)
+            obj_dict = models.storage.all()
 
+            key = f"{class_name}.{instance_id}"
+
+            if key in obj_dict:
+                instance = obj_dict[key]
+                print(instance)
+            else:
+                print("** no instance found **")
+
+    
+    def do_destroy(self, arg):
+        """Deletes an instance based on the class name and id"""
+        args = arg.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+        elif len(args) == 1:
+            class_name = args[0]
+            print("** instance id missing **")
+        elif len(args) == 2:
+            class_name = args[0]
+            instance_id = args[1]
+
+            obj_dict = models.storage.all()
+
+            del_key = f"{class_name}.{instance_id}"
+
+            if del_key in obj_dict:
+                del obj_dict[del_key]
+
+                models.storage.save()
+            else:
+                print("** no instance found **")
+    
+    def do_all(self):
+        """ Prints all string representation of all instances """
+        args = arg.split()
+
+        if len(args) == 1:
+            print("** class doesn't exist **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
