@@ -94,18 +94,19 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """ Prints all string representation of all instances """
         args = arg.split()
+        instances = models.storage.all().values()
 
         if len(args) == 0:
-            instances = models.storage.all().values()
             for instance in instances:
                 print(instance)
+
         if len(args) == 1:
             if args[0] not in ["BaseModel"]:
                 print("** class doesn't exist **")
             else:
-                instances = models.storage.all().values()
                 for instance in instances:
-                    print(instance)
+                    if instance.__class__.__name__ == args[0]:
+                        print(instance)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
