@@ -51,3 +51,4 @@ $
 ### Commands available in the command interpreter
 | Command | Description |
 |---------|-------------|
+| create  | Creates a new instance of ```BaseModel```, saves it (to the JSON file) and prints the id. ```Ex: $ create BaseModel``` |
