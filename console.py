@@ -142,8 +142,8 @@ class HBNBCommand(cmd.Cmd):
             else:
                 attr = args[2]
                 val = args[3]
-                data_type = type(val)
                 obj_instance = obj[key]
+                data_type = type(val)
 
                 if data_type == int:
                     setattr(obj_instance, attr, int(val))
