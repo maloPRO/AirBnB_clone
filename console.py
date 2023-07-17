@@ -146,12 +146,14 @@ class HBNBCommand(cmd.Cmd):
                 data_type = type(val)
 
                 if data_type == int:
-                    setattr(obj_instance, attr, int(val))
+                    val = int(val)
                 elif data_type == float:
-                    setattr(obj_instance, attr, float(val))
-                else:
-                    setattr(obj_instance, attr, val)
+                    val = float(val)
+
+                setattr(obj_instance, attr, val)
+
                 models.storage.save()
+                print(type(val))
 
 
 if __name__ == '__main__':
