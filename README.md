@@ -60,5 +60,6 @@ $
 ## Models
 
 ## Contributors
-List of people who contributed to this project
-- Gilbert Malova - [github](https://github.com/maloPRO)
+List of authors who contributed to this project
+- Gilbert Malova - malovagilbert@gmail.com - [Github](https://github.com/maloPRO)
+- Jesca Chimweri - jessicahchimweri@gmail.com - [Github](https://github.com/chirindo)
