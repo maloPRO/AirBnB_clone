@@ -4,7 +4,8 @@
 
 import cmd
 import models
-from  models.base_model import BaseModel
+from models.base_model import BaseModel
+
 
 class HBNBCommand(cmd.Cmd):
     """ Command line interpreter """
@@ -35,7 +36,8 @@ class HBNBCommand(cmd.Cmd):
             else:
                 new_model = BaseModel()
                 new_model.save()
-                print(new_model.id)
+        print(new_model.id)
+
     def do_show(self, arg):
         """
         Prints the string representation of an
@@ -64,7 +66,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
-    
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id"""
         args = arg.split()
@@ -90,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
                 models.storage.save()
             else:
                 print("** no instance found **")
-    
+
     def do_all(self, arg):
         """ Prints all string representation of all instances """
         args = arg.split()
@@ -117,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         obj = models.storage.all()
 
         if len(args) == 0:
-             print("** class name missing **")
+            print("** class name missing **")
         elif args[0] not in ["BaseModel"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
@@ -151,8 +152,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     setattr(obj_instance, attr, val)
                 models.storage.save()
-
-
 
 
 if __name__ == '__main__':
