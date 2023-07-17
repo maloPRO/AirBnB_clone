@@ -8,13 +8,14 @@ import models
 from time import sleep
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     def test_model_name(self):
 
         my_model = BaseModel()
         my_model.name = "Model one"
         self.assertEqual(my_model.name, "Model one")
-   
+
     def test_differrent_created_at(self):
         bm1 = BaseModel()
         sleep(0.1)
@@ -26,3 +27,6 @@ class TestBaseModel(unittest.TestCase):
         bm2 = BaseModel()
         self.assertNotEqual(bm1.id, bm2.id)
 
+
+if __name__ == "__main__":
+    unittest.main()
