@@ -13,7 +13,7 @@ The command interpreter implements:
 - a custom prompt ```(hbnb)```
 - an empty line + ```ENTER``` doesn't execute anything
 
-```$ ./console.py
+``` $ ./console.py
 guillaume@ubuntu:~/AirBnB$ ./console.py
 (hbnb) help
 
@@ -29,4 +29,4 @@ Quit command to exit the program
 (hbnb) 
 (hbnb) quit 
 guillaume@ubuntu:~/AirBnB$ 
-$```
+$ ```
