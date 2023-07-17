@@ -13,7 +13,7 @@ The command interpreter implements:
 - a custom prompt ```(hbnb)```
 - an empty line + ```ENTER``` doesn't execute anything
 
-$ ./console.py
+```$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
@@ -23,4 +23,4 @@ EOF  help  quit
 (hbnb) 
 (hbnb) 
 (hbnb) quit
-$
+$```
