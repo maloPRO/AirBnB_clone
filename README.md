@@ -25,7 +25,8 @@ EOF  help  quit
 (hbnb) 
 (hbnb) 
 (hbnb) quit
-$```
+$
+
 In non-interactive mode:
 ```$ echo "help" | ./console.py
 (hbnb)
