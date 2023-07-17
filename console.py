@@ -4,6 +4,11 @@
 
 import cmd
 import models
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models.user import User
 from models.base_model import BaseModel
 from typing import cast
@@ -33,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         elif len(args) == 1:
-            if args[0] not in ["BaseModel", "User"]:
+            if args[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
                 print("** class doesn't exist **")
             else:
                 new_model = BaseModel()
@@ -49,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         elif len(args) == 1:
-            if args[0] not in ["BaseModel", "User"]:
+            if args[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
                 print("** class doesn't exist **")
             else:
                 print("** instance id missing **")
@@ -72,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
         elif len(args) == 1:
-            if args[0] not in ["BaseModel", "User"]:
+            if args[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
                 print("** class doesn't exist **")
             else:
                 print("** instance id missing **")
@@ -97,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
             for instance in instances:
                 print(instance)
         if len(args) == 1:
-            if args[0] not in ["BaseModel", "User"]:
+            if args[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
                 print("** class doesn't exist **")
             else:
                 for instance in instances:
@@ -114,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
 
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] not in ["BaseModel", "User"]:
+        elif args[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
