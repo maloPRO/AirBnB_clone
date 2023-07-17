@@ -48,3 +48,6 @@ EOF  help  quit
 (hbnb) 
 $
 ```
+### Commands available in the command interpreter
+| Command | Description |
+|---------|-------------|
