@@ -8,6 +8,7 @@ from models.user import User
 from models.base_model import BaseModel
 from typing import cast
 
+
 class HBNBCommand(cmd.Cmd):
     """ Command line interpreter """
 
@@ -137,14 +138,14 @@ class HBNBCommand(cmd.Cmd):
                 attr = args[2]
                 val = args[3]
                 obj_instance = obj[key]
-                
+
                 try:
                     val = int(val)
                 except ValueError:
                     try:
                         val = float(val)
                     except ValueError:
-                       val
+                        val
 
                 setattr(obj_instance, attr, val)
                 models.storage.save()
