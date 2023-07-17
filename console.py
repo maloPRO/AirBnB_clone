@@ -6,7 +6,7 @@ import cmd
 import models
 from models.user import User
 from models.base_model import BaseModel
-
+from typing import cast
 
 class HBNBCommand(cmd.Cmd):
     """ Command line interpreter """
@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
 
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] not in ["BaseModel"]:
+        elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
@@ -137,14 +137,16 @@ class HBNBCommand(cmd.Cmd):
                 attr = args[2]
                 val = args[3]
                 obj_instance = obj[key]
-                data_type = type(val)
+                
+                try:
+                    val = int(val)
+                except ValueError:
+                    try:
+                        val = float(val)
+                    except ValueError:
+                       val
 
-                if data_type == int:
-                    setattr(obj_instance, attr, int(val))
-                elif data_type == float:
-                    setattr(obj_instance, attr, float(val))
-                else:
-                    setattr(obj_instance, attr, val)
+                setattr(obj_instance, attr, val)
                 models.storage.save()
 
 
