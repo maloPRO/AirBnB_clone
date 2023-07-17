@@ -13,7 +13,7 @@ The command interpreter implements:
 - a custom prompt ```(hbnb)```
 - an empty line + ```ENTER``` doesn't execute anything
 
-#### Execution
+### Execution
 In interactive mode:
 ```$ ./console.py
 (hbnb) help
