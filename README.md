@@ -52,3 +52,6 @@ $
 | Command | Description |
 |---------|-------------|
 | create  | Creates a new instance of ```BaseModel```, saves it (to the JSON file) and prints the id. ```Ex: $ create BaseModel``` |
+| show    | Prints the string representation of an instance based on the class name and ```id```. ```Ex: $ show BaseModel 1234-1234-1234``` |
+| destroy  | Deletes an instance based on the class name and ```id``` (save the change into the JSON file). ```Ex: $ destroy BaseModel 1234-1234-1234```.|
+| all      | Prints all string representation of all instances based or not on the class name. ```Ex: $ all BaseModel``` or ```$ all```.|
