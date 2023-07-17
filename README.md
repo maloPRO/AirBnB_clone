@@ -58,3 +58,7 @@ $
 | update    | Updates an instance based on the class name and ```id``` by adding or updating attribute (save the change into the JSON file). ```Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com"```. |
 
 ## Models
+
+## Contributors
+List of people who contributed to this project
+- Gilbert Malova - [github](https://github.com/maloPRO)
