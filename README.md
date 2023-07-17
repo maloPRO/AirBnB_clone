@@ -13,8 +13,9 @@ The command interpreter implements:
 - a custom prompt ```(hbnb)```
 - an empty line + ```ENTER``` doesn't execute anything
 
-``` $ ./console.py
-guillaume@ubuntu:~/AirBnB$ ./console.py
+#### Execution
+In interactive mode:
+```$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
@@ -22,11 +23,26 @@ Documented commands (type help <topic>):
 EOF  help  quit
 
 (hbnb) 
-(hbnb) help quit
-Quit command to exit the program
+(hbnb) 
+(hbnb) quit
+$```
+In non-interactive mode:
+```$ echo "help" | ./console.py
+(hbnb)
 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
 (hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
 (hbnb) 
-(hbnb) quit 
-guillaume@ubuntu:~/AirBnB$ 
 $
