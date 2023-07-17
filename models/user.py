@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""creates a new user"""
+""" Module for User class """
 
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
-    """creates a user"""
+    """ creates a user """
 
     email = ""
     password = ""
