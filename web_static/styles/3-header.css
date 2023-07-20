@@ -1,0 +1,12 @@
+header {
+    background-color: #FFF;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    align-items: center;
+}
+header img {
+    float: left;
+    margin-left: 20px;
+}
