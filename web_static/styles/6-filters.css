@@ -24,8 +24,8 @@
 .filters button:hover {
     opacity: 90%;
 }
-.locations,
-.amenities {
+.filters .locations,
+.filters .amenities {
     height: 100%;
     width: 25%;
     display: flex;
@@ -40,8 +40,8 @@
     font-weight: 600;
     margin: 0 30px;
 }
-.locations h4,
-.amenities h4 {
+.filters .locations h4,
+.filters .amenities h4 {
     font-size: 14px;
     font-weight: 400;
     margin: 0 30px;
@@ -64,8 +64,8 @@ h2 {
 li {
     list-style-type: none;
 }
-.locations:hover .popover,
-.amenities:hover .popover {
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
     display: flex;
     flex-direction: column;
     justify-content: center;
