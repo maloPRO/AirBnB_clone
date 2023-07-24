@@ -86,7 +86,7 @@ article .amenities h2 {
     text-align: left; 
     padding-bottom: 5px;  
 }
-article .amenities ul li:nth-child(1) {
+article .amenities ul .tv {
     background-image: url('../images/icon_tv.png');
     background-repeat: no-repeat;
     background-position: 0 50%;
@@ -94,7 +94,7 @@ article .amenities ul li:nth-child(1) {
     padding-left: 20px;
     margin-bottom: 10px; 
 }
-article .amenities ul li:nth-child(2) {
+article .amenities ul .wifi {
     background-image: url('../images/icon_wifi.png');
     background-repeat: no-repeat;
     background-position: 0 50%;
@@ -102,11 +102,24 @@ article .amenities ul li:nth-child(2) {
     padding-left: 20px;
     margin-bottom: 10px;  
 }
-article .amenities ul li:nth-child(3) {
+article .amenities ul .pet {
     background-image: url('../images/icon_pets.png');
     background-repeat: no-repeat;
     background-position: 0 50%;
     background-size: 5%;  
     padding-left: 20px;
     margin-bottom: 10px;  
+}
+article .reviews {
+    margin-top: 40px;
+}
+article .reviews h2{
+    font-size: 16px;
+    border-bottom: 1px solid#DDDDDD;
+    text-align: left; 
+    padding-bottom: 5px; 
+}
+
+article .reviews ul {
+    padding: 0;
 }
