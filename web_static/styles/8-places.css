@@ -71,3 +71,9 @@
     align-items: flex-end;
     justify-content: center;
 }
+.user {
+    padding: 10px;
+}
+.description {
+    padding: 10px;
+}
